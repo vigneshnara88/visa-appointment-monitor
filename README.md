@@ -4,6 +4,20 @@ Appointment-availability selection and monitoring logic, motivated by the need t
 
 The project separates availability parsing, date constraints, facility preferences and scheduling into small JavaScript modules. Its public demonstration uses invented local appointment snapshots and a virtual clock. It produces structured recommendations that show why slots were accepted or rejected.
 
+## Motivation
+
+An appointment can become a constraint on a trip even when the rest of the planning is in place. The motivating personal problem was finding an earlier visa appointment for competition travel. Checking a list of dates repeatedly is only part of that problem: an earlier date must also fit a usable travel window, be at an acceptable facility and improve on an appointment already held.
+
+This repository focuses on making those decisions explicit. It turns successive availability snapshots into a small, inspectable decision process: validate what was observed, apply the person's constraints, choose a candidate consistently, and explain when to recommend it or stop looking. Separating those responsibilities also makes the scheduling and selection logic easier to understand independently of a particular appointment portal.
+
+## How the decision process works
+
+The configuration describes the existing appointment, the earliest usable date, a target date and an ordered list of facilities. Each snapshot is normalized into dated appointment slots. The selector keeps slots at configured facilities that are earlier than the current appointment and meet the minimum date, then orders them by date, facility preference and time.
+
+For example, someone with a July appointment may be willing to travel from June onwards and hope to secure a slot by mid-June. A May slot is too early to use; a later July slot does not improve the current booking. A suitable June slot can become a recommendation. The target date controls when monitoring stops, so an improvement can still be reported before that target is reached.
+
+The monitor retains the best date it has recommended. Repeated sightings of the same date do not generate repeated recommendation events, while a strictly earlier date does. Temporary failures trigger progressively longer retry delays up to a cap. Attempt limits, consecutive-failure limits, reaching the target and exhausting the snapshot sequence all provide explicit stopping conditions. A recommendation remains an observation, and the original appointment is kept separate from it.
+
 ## What it demonstrates
 
 - Strict calendar-date and appointment-time validation.
