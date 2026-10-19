@@ -1,0 +1,12 @@
+{
+  "fixture": "fixtures/availability.json",
+  "facilities": ["demo-north", "demo-south"],
+  "currentDate": "2030-07-20",
+  "minimumDate": "2030-06-01",
+  "targetDate": "2030-06-15",
+  "startAt": "2030-05-15T09:00:00.000Z",
+  "intervalSeconds": 60,
+  "maximumBackoffSeconds": 300,
+  "maximumAttempts": 8,
+  "maximumConsecutiveFailures": 3
+}

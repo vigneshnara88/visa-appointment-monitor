@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.session/
+artifacts/
+outputs/
+*.log
+*.zip
+*.har
+*.png
+*.jpg
+.DS_Store
+Thumbs.db

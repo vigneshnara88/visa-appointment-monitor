@@ -1,0 +1,10 @@
+{
+  "name": "visa-appointment-monitor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline appointment-availability parsing, selection and scheduling demonstration",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "scripts": { "demo": "node src/index.js" }
+}

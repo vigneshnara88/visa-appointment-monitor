@@ -1,0 +1,40 @@
+{
+  "description": "Invented appointment availability for a local demonstration. No real applicants, facilities or appointments.",
+  "snapshots": [
+    {
+      "status": "available",
+      "facilities": [
+        { "id": "demo-north", "dates": [{ "date": "2030-07-25", "available_times": ["09:30"] }] },
+        { "id": "demo-south", "dates": [] }
+      ]
+    },
+    { "status": "temporary_unavailable" },
+    {
+      "status": "available",
+      "facilities": [
+        { "id": "demo-north", "dates": [
+          { "date": "2030-06-28", "available_times": ["10:30", "09:00"] },
+          { "date": "2030-06-20", "available_times": [] }
+        ] },
+        { "id": "demo-south", "dates": [
+          { "date": "2030-06-30", "available_times": ["14:00"] },
+          { "date": "2030-05-30", "available_times": ["09:00"] }
+        ] }
+      ]
+    },
+    {
+      "status": "available",
+      "facilities": [
+        { "id": "demo-north", "dates": [{ "date": "2030-06-28", "available_times": ["09:00"] }] },
+        { "id": "demo-south", "dates": [{ "date": "2030-06-28", "available_times": ["10:00"] }] }
+      ]
+    },
+    {
+      "status": "available",
+      "facilities": [
+        { "id": "demo-north", "dates": [{ "date": "2030-06-12", "available_times": ["11:15"] }] },
+        { "id": "demo-south", "dates": [{ "date": "2030-06-15", "available_times": ["08:45"] }] }
+      ]
+    }
+  ]
+}
